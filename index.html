@@ -147,7 +147,7 @@
                   <ul>
                     <li>
                       <i class="icofont-rounded-right"></i>
-                      <strong>Age:</strong> 29
+                      <strong>Age:</strong> <span id="age"></span>
                     </li>
                     <li>
                       <i class="icofont-rounded-right"></i>
@@ -620,6 +620,11 @@
 
     <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
     <div id="preloader"></div>
+    <script>
+      const birthYear = 1994;
+      const currentYear = new Date().getFullYear();
+      document.getElementById("age").textContent = currentYear - birthYear;
+    </script>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
