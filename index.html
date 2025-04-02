@@ -621,9 +621,18 @@
     <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
     <div id="preloader"></div>
     <script>
-      const birthYear = 1994;
-      const currentYear = new Date().getFullYear();
-      document.getElementById("age").textContent = currentYear - birthYear;
+      const birthDate = new Date(1994, 9, 25);
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      if (
+        today.getMonth() < birthDate.getMonth() ||
+        (today.getMonth() === birthDate.getMonth() &&
+          today.getDate() < birthDate.getDate())
+      ) {
+        age--;
+      }
+
+      document.getElementById("age").textContent = age;
     </script>
 
     <!-- Vendor JS Files -->
